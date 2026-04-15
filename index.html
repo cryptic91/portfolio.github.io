@@ -1,248 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MD Rakibul Islam Shanto | Technical Support Engineer</title>
+  <meta name="description" content="Portfolio of MD Rakibul Islam Shanto – Technical Support Engineer specialising in Shopify products and frontend debugging." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-    
-    <div id="header">
-        <div class="container">
-            <nav>
-                <!-- <img src="logo.png" alt="logo"> -->
-                <picture class="logo">🛦</picture>
-                <!-- <picture class="logo">🛨</picture> -->
-                <!-- <picture class="logo">🛪</picture> -->
-                <ul>
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
 
-            <div class="row">
-                <div class="column">
-                    <div class="header-text">
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Web Developer & Software Developer</p>
-                        <h2>Assalamu Alaikum, <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm <span>Rakib</span>
-                        <br>From Bangladesh</h2>
-                        <!-- <img src="profile1.jpg" alt="Shanto" height="400px" width="400px"> -->
-                    </div>
-                </div>
+  <!-- ═══════════════════════════════════════
+       BACKGROUND CANVASES
+  ═══════════════════════════════════════ -->
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="cursor-canvas"></canvas>
 
-                <div class="column">
-                    <img src="profile2.jpg" alt="Shanto" height="400px" width="400px">
-                </div>
-            </div>
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Rakibul<span class="dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-            
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#about"        class="mobile-link">About</a></li>
+      <li><a href="#experience"   class="mobile-link">Experience</a></li>
+      <li><a href="#projects"     class="mobile-link">Projects</a></li>
+      <li><a href="#skills"       class="mobile-link">Skills</a></li>
+      <li><a href="#education"    class="mobile-link">Education</a></li>
+      <li><a href="#research"     class="mobile-link">Research</a></li>
+      <li><a href="#volunteering" class="mobile-link">Volunteering</a></li>
+      <li><a href="#contact"      class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
 
-            <!-- <div class="home-img">
-                <img src="profile1.jpg" alt="Shanto" height="400px" width="400px">
-            </div> -->
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
 
+      <!-- LEFT: text -->
+      <div class="hero-text reveal">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">MD Rakibul Islam<br /><span>Shanto</span></h1>
+        <div class="typewriter-row">
+          <span id="typewriter"></span><span class="tw-cursor">|</span>
         </div>
+        <p class="hero-bio">
+          Technical Support Engineer with ~2 years of experience at Zepto Apps,
+          specialising in Shopify products and frontend browser debugging.
+        </p>
+        <div class="hero-buttons">
+          <a href="Resume of MD Rakibul Islam Shanto.pdf" download="MD_Rakibul_Islam_Shanto_CV.pdf" class="btn btn-primary">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-paper-plane"></i> Contact Me
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://linkedin.com/in/rakibul-islam-shanto" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/cryptic91"                  target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:shanto3871@gmail.com"                    aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- RIGHT: hexagon photo -->
+      <div class="hero-image reveal">
+        <div class="hex-wrapper" id="hero-hex">
+          <div class="hex-spin-ring"></div>
+          <div class="hex-photo">
+            <img src="Rakib.JPG" alt="MD Rakibul Islam Shanto – profile photo" />
+          </div>
+          <div class="hex-pulse"></div>
+        </div>
+      </div>
+
     </div>
 
-
-
-<!-- ................about.................. -->
-
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="profile3.jpg" alt="">
-                </div>
-                <div class="about-col-2">
-                    <h2 class="sub-title">About Me</h2>
-                    <p>
-                        I am Md. Rakibul Islam Shanto. Currently I'm studying in CSE in Daffodil Internation University.
-                        I'm in my 4th year of B.Sc. I live in Dhaka with my family. My home town
-                        is Barishal. I have passed my HSC and SSC from BAF Shaheen College Dhaka.
-                        I am a Software Developer and also work for Frontend Developing and 
-                        Backend Development. </p>
-                    
-                    <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                            <p class="tab-links" onclick="opentab('education')">Education</p>
-                    </div>
-
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Frontend Development</span><br>Vue Js, HTML, CSS, JavaScript</li>
-                            <li><span>Beckend Development</span><br>Django, PHP, MySQL</li>
-                            <li><span>Software Development</span><br>Python, Django</li>
-                        </ul>
-                    </div>
-
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>Member</span><br>(2021-22) Computer Programming Club DIU</li>
-                            <li><span>Team member</span><br>(2021-22) Cyber Security Center DIU</li>
-                            <!-- <li><span>App Development</span><br>Building Android/iOS apps</li> -->
-                        </ul>
-                    </div>
-
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>BSc</span><br>(2020-24) Daffodil Internation University</li>
-                            <li><span>HSC</span><br>(2017-19) BAF Shaheen College Dhaka</li>
-                            <li><span>SSC</span><br>(2006-17) BAF Shaheen College Dhaka</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="scroll-hint">
+      <div class="scroll-line-ani"></div>
+      <span>Scroll</span>
     </div>
+  </section>
 
-
-
-<!-- ................services.................. -->
-
-<div id="services">
+  <!-- ═══════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════ -->
+  <section id="about" class="section about">
     <div class="container">
-        <h1 class="sub-title">My Services</h1>
-        <div class="services-list">
-            <div>
-                <i class='bx bx-code-alt'></i>
-                <h2>Software Development</h2>
-                <p>Software development is the process of creating applications or software solutions to address specific needs or problems. It involves various stages such as requirements gathering, designing, coding, testing, deployment, and maintenance.</p>
-                <!-- <a href="#">Learn more</a> -->
-            </div>
+      <h2 class="section-title reveal">About <span>Me</span></h2>
+      <div class="about-grid">
 
-            <div>
-                <i class='bx bxs-crop'></i>
-                <h2>Frontend Development</h2>
-                <p>Frontend development involves creating the visible part of my website or web application that users interact with directly. I focus on designing user interfaces, implementing user interactions, and ensuring a smooth user experience.</p>
-                <!-- <a href="#">Learn more</a> -->
+        <!-- small hex photo — left -->
+        <div class="about-image reveal">
+          <div class="hex-wrapper hex-sm">
+            <div class="hex-spin-ring"></div>
+            <div class="hex-photo">
+              <img src="Rakib.JPG" alt="MD Rakibul Islam Shanto" />
             </div>
-
-            <div>
-                <i class='bx bxl-microsoft-teams'></i>
-                <h2>Backend Development</h2>
-                <p>Backend development focuses on the server-side of my web application. I build and maintain the server, databases, and APIs using tools like Django, Python, and MySQL.</p>
-                <!-- <a href="#">Learn more</a> -->
-            </div>
+          </div>
         </div>
+
+        <div class="about-content reveal">
+          <p class="about-text">
+            I'm a <strong>Technical Support Engineer</strong> at Zepto Apps, Dhaka, delivering
+            L1/L2 support for international English-speaking Shopify merchants across 5 published
+            apps with consistently high CSAT scores.
+          </p>
+          <p class="about-text">
+            I hold a <strong>BSc in Computer Science &amp; Engineering</strong> from Daffodil
+            International University (CGPA&nbsp;3.81, Thesis Grade&nbsp;A+) with a thesis on
+            AI-driven brain tumour segmentation achieving <strong>99.65% accuracy</strong>.
+          </p>
+          <p class="about-text">
+            Self-motivated problem-solver, passionate about bridging technical complexity and
+            end-user clarity through empathy, precise debugging, and clear communication.
+          </p>
+          <div class="stats-grid">
+            <div class="stat-card reveal"><span class="stat-num">2+</span><span class="stat-lbl">Years Exp.</span></div>
+            <div class="stat-card reveal"><span class="stat-num">3.81</span><span class="stat-lbl">CGPA / 4.0</span></div>
+            <div class="stat-card reveal"><span class="stat-num">5</span><span class="stat-lbl">Shopify Apps</span></div>
+            <div class="stat-card reveal"><span class="stat-num">A+</span><span class="stat-lbl">Thesis Grade</span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-</div>
+  </section>
 
-
-
-<!-- -----------------portfolio---------------- -->
-
-<div id="portfolio">
+  <!-- ═══════════════════════════════════════
+       EXPERIENCE
+  ═══════════════════════════════════════ -->
+  <section id="experience" class="section experience">
     <div class="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="w-1.jpg" alt="">
-                <div class="layer">
-                    <h3>Bangladesh Airlines</h3>
-                    <p>It is a project made with Python Django. 
-                        In a deep sense, I used HTML, CSS, Python, MySQL.</p>
-                    <a href="https://github.com/cryptic91/Bangladesh_Airlines"><i class='bx bx-link-external'></i></a>
-                </div>
+      <h2 class="section-title reveal">Work <span>Experience</span></h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card glass-card">
+            <div class="tl-header">
+              <div>
+                <h3>Technical Support Engineer</h3>
+                <p class="tl-company">Zepto Apps</p>
+              </div>
+              <div class="tl-meta">
+                <span><i class="far fa-calendar-alt"></i>&nbsp;Jul 2024 – Present</span>
+                <span><i class="fas fa-map-marker-alt"></i>&nbsp;Dhaka, Bangladesh</span>
+              </div>
             </div>
-
-            <div class="work">
-                <img src="w-2.jpg" alt="">
-                <div class="layer">
-                    <h3>Simple Calculator</h3>
-                    <p>It is a project made with HTML, CSS, JavaScript.</p>
-                    <a href="https://github.com/cryptic91/Simple-Calculator"><i class='bx bx-link-external'></i></a>
-                </div>
+            <ul class="tl-duties">
+              <li>Provided L1/L2 technical support for international English-speaking Shopify merchants</li>
+              <li>Supported 5 published Shopify apps with consistently high CSAT scores</li>
+              <li>Mentored and onboarded junior support engineers, building team capacity</li>
+              <li>Created comprehensive internal knowledge base documentation</li>
+              <li>Used Browser DevTools (HTML/CSS/JS) to diagnose and resolve merchant issues</li>
+            </ul>
+            <div class="achievement-badge">
+              <i class="fas fa-trophy"></i>
+              <span>Top-Performing Support Engineer — Year 1 · Highest Positive Review 2024 (Shopify Product Personalizer)</span>
             </div>
-
-            <div class="work">
-                <img src="w-3.jpg" alt="">
-                <div class="layer">
-                    <h3>Puzzle Game</h3>
-                    <p>It's a project that is puzzle solving and I made it by Java.</p>
-                    <a href="https://github.com/cryptic91/Puzzle-Game"><i class='bx bx-link-external'></i></a>
-                </div>
+            <div class="tag-row">
+              <span class="tag">Shopify</span>
+              <span class="tag">Zendesk</span>
+              <span class="tag">Crisp</span>
+              <span class="tag">DevTools</span>
+              <span class="tag">HTML/CSS/JS</span>
             </div>
+          </div>
         </div>
-
-        <!-- <a href="#" class="btn">See more</a> -->
-    
+      </div>
     </div>
-</div>
+  </section>
 
-
-
-<!-- -----------contact ------------  -->
-
-<div id="contact">
+  <!-- ═══════════════════════════════════════
+       PROJECTS
+  ═══════════════════════════════════════ -->
+  <section id="projects" class="section projects">
     <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class='bx bx-send'></i>rakibul15-3871@diu.edu.bd</p>
-                <p><i class='bx bxs-phone-call'></i>01845168123</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/"><i class='bx bxl-facebook-circle'></i></a>
-                    <a href="https://www.twitter.com/"><i class='bx bxl-twitter'></i></a>
-                    <a href="https://www.instagram.com/"><i class='bx bxl-instagram'></i></a>
-                    <a href="https://www.linkedin.com/"><i class='bx bxl-linkedin-square'></i></a>
-                </div>
-                <a href="CV.pdf" download class="btn btn2">Download CV</a>
-            </div>
-            <div class="contact-right">
-                <form name="'submit-to-google-sheet'">
-                    <input type="text" name="name" placeholder="Your name" required>
-                    <input type="email" name="email" placeholder="Your email" required>
-                    <textarea name="message" rows="6" placeholder="Your message" required></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-            </div>
+      <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+      <div class="projects-grid">
+
+        <!-- ResumeIQ -->
+        <div class="project-card glass-card reveal"
+             data-tilt data-tilt-max="8" data-tilt-speed="400"
+             data-tilt-glare data-tilt-max-glare="0.25">
+          <div class="proj-icon"><i class="fas fa-file-magnifying-glass"></i></div>
+          <h3>ResumeIQ</h3>
+          <p class="proj-sub">AI Resume Analyser</p>
+          <p class="proj-desc">AI-powered ATS resume analyser. Paste resume + job description, get an instant compatibility score, keyword analysis, before/after rewrites, and quick wins.</p>
+          <div class="proj-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">Gemini 2.5</span>
+            <span class="tech-badge">Vanilla JS</span>
+            <span class="tech-badge">Render</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://resumeiq-ai-analyzer.onrender.com" target="_blank" rel="noopener" class="plink plink-primary">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/cryptic91/ResumeIQ_AI-Analyzer" target="_blank" rel="noopener" class="plink plink-secondary">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
         </div>
+
+        <!-- RakibAI -->
+        <div class="project-card glass-card reveal"
+             data-tilt data-tilt-max="8" data-tilt-speed="400"
+             data-tilt-glare data-tilt-max-glare="0.25">
+          <div class="proj-icon"><i class="fas fa-robot"></i></div>
+          <h3>RakibAI</h3>
+          <p class="proj-sub">PDF Chat Application</p>
+          <p class="proj-desc">Upload multiple PDFs and have an AI conversation with your documents. Features a full RAG pipeline, conversation memory, and source citations with page numbers.</p>
+          <div class="proj-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">LangChain</span>
+            <span class="tech-badge">FAISS</span>
+            <span class="tech-badge">Gemini 2.5</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/cryptic91/pdf-chat-app" target="_blank" rel="noopener" class="plink plink-secondary">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Brain Tumour -->
+        <div class="project-card glass-card reveal"
+             data-tilt data-tilt-max="8" data-tilt-speed="400"
+             data-tilt-glare data-tilt-max-glare="0.25">
+          <div class="proj-icon"><i class="fas fa-brain"></i></div>
+          <h3>Brain Tumour Classifier</h3>
+          <p class="proj-sub">Research / Thesis Project</p>
+          <p class="proj-desc">Full-stack web app for real-time MRI-based brain tumour detection. Custom CNN: 96.32% segmentation accuracy. GNN: 99.65% classification accuracy.</p>
+          <div class="proj-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Flask</span>
+            <span class="tech-badge">CNN</span>
+            <span class="tech-badge">GNN</span>
+            <span class="tech-badge">Bootstrap</span>
+          </div>
+          <div class="proj-links">
+            <span class="thesis-badge"><i class="fas fa-graduation-cap"></i> Thesis Project</span>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="copyright">
-        <p>Copyright <i class='bx bx-copyright' ></i> Rakib.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SKILLS
+  ═══════════════════════════════════════ -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2 class="section-title reveal">Skills &amp; <span>Expertise</span></h2>
+      <div class="skills-layout">
+
+        <!-- Progress Bars -->
+        <div class="skills-bars reveal">
+          <h3 class="skills-subtitle">Core Competencies</h3>
+
+          <div class="bar-item">
+            <div class="bar-header"><span>Technical Support (L1/L2)</span><span>95%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-w="95"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>Browser DevTools &amp; Debugging</span><span>90%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-w="90"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>Shopify / CRM Platforms</span><span>88%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-w="88"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>HTML / CSS / JavaScript</span><span>85%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-w="85"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>Python / Django / Flask</span><span>82%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-w="82"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>AI / ML (CNN · GNN · LangChain)</span><span>78%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-w="78"></div></div>
+          </div>
+        </div>
+
+        <!-- Pill groups -->
+        <div class="skills-pills reveal">
+          <div class="pill-group">
+            <h3 class="skills-subtitle">Support Tools</h3>
+            <div class="pills">
+              <span class="pill">Zendesk</span><span class="pill">Crisp</span>
+              <span class="pill">Shopify Admin</span><span class="pill">Browser DevTools</span>
+              <span class="pill">Jira</span><span class="pill">Notion</span>
+            </div>
+          </div>
+          <div class="pill-group">
+            <h3 class="skills-subtitle">Programming</h3>
+            <div class="pills">
+              <span class="pill">Python</span><span class="pill">JavaScript</span>
+              <span class="pill">HTML5</span><span class="pill">CSS3</span>
+              <span class="pill">C / C++</span><span class="pill">Django</span>
+              <span class="pill">Flask</span><span class="pill">FastAPI</span><span class="pill">Git</span>
+            </div>
+          </div>
+          <div class="pill-group">
+            <h3 class="skills-subtitle">AI / ML</h3>
+            <div class="pills">
+              <span class="pill">LangChain</span><span class="pill">FAISS</span>
+              <span class="pill">CNN</span><span class="pill">GNN</span>
+              <span class="pill">SVM</span><span class="pill">Random Forest</span>
+              <span class="pill">ANN</span><span class="pill">Google Gemini</span>
+            </div>
+          </div>
+          <div class="pill-group">
+            <h3 class="skills-subtitle">Soft Skills</h3>
+            <div class="pills">
+              <span class="pill">Communication</span><span class="pill">Team Mentoring</span>
+              <span class="pill">Problem Solving</span><span class="pill">Adaptability</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-</div>
+  </section>
 
+  <!-- ═══════════════════════════════════════
+       EDUCATION
+  ═══════════════════════════════════════ -->
+  <section id="education" class="section education">
+    <div class="container">
+      <h2 class="section-title reveal">My <span>Education</span></h2>
+      <div class="edu-card glass-card reveal">
+        <div class="edu-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+        <div class="edu-body">
+          <h3>BSc in Computer Science &amp; Engineering</h3>
+          <p class="edu-uni">Daffodil International University, Dhaka</p>
+          <p class="edu-year"><i class="far fa-calendar-alt"></i>&nbsp;2020 – 2024</p>
+          <div class="edu-stats">
+            <div class="edu-stat"><span class="edu-val">3.81 / 4.0</span><span class="edu-lbl">CGPA</span></div>
+            <div class="edu-stat"><span class="edu-val">A+</span><span class="edu-lbl">Thesis Grade</span></div>
+          </div>
+          <p class="edu-thesis">
+            <i class="fas fa-scroll"></i>&nbsp;<strong>Thesis:</strong> Brain Tumour Segmentation and Classification Using Image Processing
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ═══════════════════════════════════════
+       RESEARCH
+  ═══════════════════════════════════════ -->
+  <section id="research" class="section research">
+    <div class="container">
+      <h2 class="section-title reveal">Research <span>Highlight</span></h2>
+      <div class="research-card glass-card reveal">
+        <div class="research-header">
+          <div class="research-icon-wrap"><i class="fas fa-microscope"></i></div>
+          <div>
+            <h3>Brain Tumour Segmentation &amp; Classification</h3>
+            <p class="research-sub">Deep Learning — CNN + GNN Hybrid Model</p>
+          </div>
+        </div>
+        <p class="research-desc">
+          Developed a full-stack web application for real-time MRI-based brain tumour detection.
+          A custom Convolutional Neural Network (CNN) handles precise segmentation while a
+          Graph Neural Network (GNN) performs high-accuracy multi-class classification.
+          Built with Python, Flask, Bootstrap, and deployed as a research prototype.
+        </p>
+        <div class="accuracy-row">
+          <!-- CNN -->
+          <div class="acc-item">
+            <div class="acc-ring-wrap">
+              <svg viewBox="0 0 36 36" class="acc-svg">
+                <path class="acc-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path class="acc-fill acc-cyan" data-val="96.32" stroke-dasharray="0,100"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              </svg>
+              <div class="acc-label-inner"><span>96.32%</span></div>
+            </div>
+            <p class="acc-desc">CNN Segmentation<br />Accuracy</p>
+          </div>
+          <div class="acc-divider"></div>
+          <!-- GNN -->
+          <div class="acc-item">
+            <div class="acc-ring-wrap">
+              <svg viewBox="0 0 36 36" class="acc-svg">
+                <path class="acc-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path class="acc-fill acc-violet" data-val="99.65" stroke-dasharray="0,100"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              </svg>
+              <div class="acc-label-inner"><span>99.65%</span></div>
+            </div>
+            <p class="acc-desc">GNN Classification<br />Accuracy</p>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Flask</span>
+          <span class="tag">CNN</span><span class="tag">GNN</span>
+          <span class="tag">Image Processing</span><span class="tag">Bootstrap</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ═══════════════════════════════════════
+       VOLUNTEERING
+  ═══════════════════════════════════════ -->
+  <section id="volunteering" class="section volunteering">
+    <div class="container">
+      <h2 class="section-title reveal">Volunteer <span>Activities</span></h2>
+      <div class="vol-grid">
+        <div class="vol-card glass-card reveal">
+          <div class="vol-icon"><i class="fas fa-code"></i></div>
+          <div><h3>Volunteer Examiner</h3><p>National Girls Programming Competition 2022</p></div>
+        </div>
+        <div class="vol-card glass-card reveal">
+          <div class="vol-icon"><i class="fas fa-users"></i></div>
+          <div><h3>Member — CPC</h3><p>Computer Programming Club, DIU (2022 – 2024)</p></div>
+        </div>
+        <div class="vol-card glass-card reveal">
+          <div class="vol-icon"><i class="fas fa-shield-halved"></i></div>
+          <div><h3>Member — Cybersecurity Club</h3><p>CTF Competitions, DIU (2022 – 2023)</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════ -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title reveal">Get In <span>Touch</span></h2>
+      <p class="contact-intro reveal">
+        I'm open to new opportunities. Whether you have a question or just want to say hi —
+        my inbox is always open!
+      </p>
+      <div class="contact-grid">
+        <a href="mailto:shanto3871@gmail.com" class="contact-card glass-card reveal">
+          <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3><p>shanto3871@gmail.com</p>
+        </a>
+        <a href="tel:+8801845168123" class="contact-card glass-card reveal">
+          <div class="cc-icon"><i class="fas fa-phone"></i></div>
+          <h3>Phone</h3><p>+880 1845168123</p>
+        </a>
+        <a href="https://linkedin.com/in/rakibul-islam-shanto" target="_blank" rel="noopener" class="contact-card glass-card reveal">
+          <div class="cc-icon"><i class="fab fa-linkedin-in"></i></div>
+          <h3>LinkedIn</h3><p>rakibul-islam-shanto</p>
+        </a>
+        <a href="https://github.com/cryptic91" target="_blank" rel="noopener" class="contact-card glass-card reveal">
+          <div class="cc-icon"><i class="fab fa-github"></i></div>
+          <h3>GitHub</h3><p>cryptic91</p>
+        </a>
+        <div class="contact-card glass-card reveal">
+          <div class="cc-icon"><i class="fas fa-location-dot"></i></div>
+          <h3>Location</h3><p>Dhaka, Bangladesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <p>Designed &amp; Built by <span>MD Rakibul Islam Shanto</span></p>
+    <p class="footer-sub">&copy; 2025 · All rights reserved</p>
+  </footer>
 
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }   
-</script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwapW843MjcZ3Mg7eg5zxiw76du4xqKJKY19FRyc-j5twiEuGPp99YSRwhLVFUXygCs/exec'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-</script>
-
-    
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
